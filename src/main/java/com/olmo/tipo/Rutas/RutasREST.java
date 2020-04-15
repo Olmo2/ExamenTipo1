@@ -17,24 +17,24 @@ public class RutasREST {
 	ProductoDAO productoDAO;
 	
 	@GetMapping("/frescos/add")
-	public String frecoadd(@ModelAttribute Producto producto) {
+	public Producto frecoadd(@ModelAttribute Producto producto) {
 		
 		productoDAO.save(producto);
 		Servicios.fresco(producto);
 		
-		return "redirect:/formulario";
+		return producto;
 		
 	}
 	
 	@GetMapping("/lacteos/add")
-	public String lacteoadd(@ModelAttribute Producto producto) {
+	public Producto lacteoadd(@ModelAttribute Producto producto) {
 		
 		productoDAO.save(producto);
 		Servicios.lacteo(producto);
 		
 		
 		
-		return "redirect:/formulario";
+		return producto;
 		
 	}
 }
