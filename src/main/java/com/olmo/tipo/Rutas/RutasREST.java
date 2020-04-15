@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.olmo.tipo.Producto.Producto;
 import com.olmo.tipo.Producto.ProductoDAO;
-import com.olmo.tipo.Servicios.Servicios;
 
 @RestController
 public class RutasREST {
 
-	
+
 	@Autowired
 	ProductoDAO productoDAO;
 	
@@ -20,7 +19,7 @@ public class RutasREST {
 	public Producto frecoadd(@ModelAttribute Producto producto) {
 		
 		productoDAO.save(producto);
-		Servicios.fresco(producto);
+		System.out.println(producto);
 		
 		return producto;
 		
@@ -30,7 +29,7 @@ public class RutasREST {
 	public Producto lacteoadd(@ModelAttribute Producto producto) {
 		
 		productoDAO.save(producto);
-		Servicios.lacteo(producto);
+		System.out.println(producto);
 		
 		
 		
